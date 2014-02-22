@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Http Ping
+# 2012/12/16	Denny
+
+# Target web url or ip on first argument
+
+end()
+{
+	echo -e "\n"
+	echo $res |\
+		sed 's//\n/g' |\
+		sed '$d' |\
+		awk '{res[$0]++; times++;} END {for(code in res) printf("%d/%d %d%% - %s\n", res[code], times, (res[code]/times)*100, code)}'
+	exit 0
+}
+
+trap end SIGINT
+while [ 1 ]
+do 
+	res=$res\
+`curl -i -m 3 -A 'Denny Http Ping v1.0' $1 2> /dev/null | head -n 1`
+	echo $res | tail -n 1
+	sleep 1
+done
+

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Encode character to %FF hex format
+# 2012/11/19	Denny
+
+while [ 1 ]
+do
+
+	read input
+
+	echo -n "$input" |\
+	xxd |\
+	awk '{
+		if(NF<10){
+			for(i=2; i<=NF-1; i++){
+				printf $i
+			}
+		} 
+		else{
+			for(i=2; i<=9; i++){
+				printf $i
+			}
+		}
+	}' |\
+	sed 's/\(..\)/%\1/g' |\
+	xargs
+
+done
