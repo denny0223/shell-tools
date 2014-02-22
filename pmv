@@ -13,7 +13,7 @@
 # $ pwd
 # /some/where/android/ori_project/res
 #
-# $ find . -name img* -exec ./resmv.sh {} ../../dest_project/res/ \;
+# $ find . -name img* -exec pmv {} ../../dest_project/res/ \;
 # will mv /some/where/android/ori_project/res/drawable-ldpi/img to /some/where/android/dest_project/res/drawable-ldpi? y
 # will mv /some/where/android/ori_project/res/drawable-xhdpi/img to /some/where/android/dest_project/res/drawable-xhdpi? y
 # will mv /some/where/android/ori_project/res/drawable-mdpi/img to /some/where/android/dest_project/res/drawable-mdpi? y
