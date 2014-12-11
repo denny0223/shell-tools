@@ -4,8 +4,8 @@
 # Input %e5%a4%a7%e5%90%8c%e8%b3%87%e7%a0%94 url to readable string
 # 2012/11/10	Denny
 
-while [ 1 ]
-do
+# while [ 1 ]
+# do
 	read url
 	echo "$url" | sed 's/%/\\\\x/g' | xargs printf | xargs
-done
+# done
