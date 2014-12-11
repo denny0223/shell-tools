@@ -3,9 +3,9 @@
 # Encode character to %FF hex format
 # 2012/11/19	Denny
 
-while [ 1 ]
-do
-
+# while [ 1 ]
+# do
+#
 	read input
 
 	echo -n "$input" |\
@@ -15,7 +15,7 @@ do
 			for(i=2; i<=NF-1; i++){
 				printf $i
 			}
-		} 
+		}
 		else{
 			for(i=2; i<=9; i++){
 				printf $i
@@ -25,4 +25,4 @@ do
 	sed 's/\(..\)/%\1/g' |\
 	xargs
 
-done
+# done
